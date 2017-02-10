@@ -1,8 +1,8 @@
-#include "Game.h"
+#include "GameMain.h"
 
 int main(int argc, char *argv[])
 {
-    Game game;
+    GameMain game;
 
     if(!game.init())
         game.free();
