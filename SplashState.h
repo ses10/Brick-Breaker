@@ -24,6 +24,13 @@ public:
         @return true if successful, false otherwise
     */
     bool init(Input* in, StateManager* m);
+
+    /**
+        Draw the frame for current State
+
+        @param graphics, the Graphics object that will draw frame
+    */
+    void draw(Graphics* graphics);
 };
 
 #endif

@@ -12,3 +12,8 @@ bool SplashState::init(Input* in, StateManager* m)
 
     return true;
 }
+
+void SplashState::draw(Graphics* graphics)
+{
+    backgroundImage.draw(0,0,graphics);
+}
