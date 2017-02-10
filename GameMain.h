@@ -21,6 +21,13 @@ public:
         @return true if successful, false otherwise
     */
     bool init();
+
+    /**
+        Draw the frame for current State
+
+        @param graphics, the Graphics object that will draw frame
+    */
+    void draw(Graphics* graphics);
 };
 
 #endif // GAMEMAIN_H

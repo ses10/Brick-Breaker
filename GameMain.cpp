@@ -12,3 +12,8 @@ bool GameMain::init()
 
     return true;
 }
+
+void GameMain::draw(Graphics* graphics)
+{
+    manager.draw(graphics);
+}
