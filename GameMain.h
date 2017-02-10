@@ -15,7 +15,11 @@ private:
     StateManager manager;
     SplashState splashState;
 public:
+    /**
+        Start the game engine
 
+        @return true if successful, false otherwise
+    */
     bool init();
 };
 

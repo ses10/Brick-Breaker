@@ -2,7 +2,7 @@
 
 bool GameMain::init()
 {
-    if(!initSystem("Game State Demo", 800, 600, false))
+    if(!initSystem("Breakout", 800, 600, false))
         return false;
 
     if(!splashState.init(getInput(), &manager))
