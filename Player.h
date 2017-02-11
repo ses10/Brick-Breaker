@@ -8,6 +8,8 @@ class Player
 private:
     SDL_Rect rect;
     int lives;
+    int xVelocity;
+    int yVelocity;
 public:
     Player();
     void subtractLives(int n);
@@ -15,11 +17,14 @@ public:
     int getY();
     int getWidth();
     int getHeight();
+    int getXVelocity();
+    int getYVelocity();
     void setX(int x);
     void setY(int y);
     void setWidth(int width);
     void setHeight(int height);
-
+    void setXVelocity(int x);
+    void setYVelocity(int x);
 };
 
 #endif // PLAYER_H

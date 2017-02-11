@@ -3,6 +3,8 @@
 Player::Player()
 {
     lives = 3;
+    xVelocity = 0;
+    yVelocity = 0;
 }
 
 void Player::subtractLives(int n)
@@ -30,6 +32,16 @@ void Player::setWidth(int width)
     rect.w = width;
 }
 
+void Player::setXVelocity(int x)
+{
+    xVelocity = x;
+}
+
+void Player::setYVelocity(int y)
+{
+    yVelocity = y;
+}
+
 int Player::getWidth()
 {
     return rect.w;
@@ -48,3 +60,14 @@ int Player::getY()
 {
     return rect.y;
 }
+
+int Player::getXVelocity()
+{
+    return xVelocity;
+}
+
+int Player::getYVelocity()
+{
+    return yVelocity;
+}
+
