@@ -8,7 +8,7 @@ bool GameMain::init()
     if(!splashState.init(getInput(), &manager))
         return false;
 
-    if(!levelOne.init(getInput(), &manager))
+    if(!levelOne.init(getInput(), &manager, this))
         return false;
 
     manager.addState(&levelOne);
