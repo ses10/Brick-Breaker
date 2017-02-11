@@ -8,6 +8,7 @@
 #include "Input.h"
 #include "Sound.h"
 #include "Player.h"
+#include "Ball.h"
 
 class LevelOne : public GameState
 {
@@ -15,7 +16,9 @@ private:
     Input* input;
     Image backgroundImage;
     Image playerSprite;
+    Image ballSprite;
     Player player;
+    Ball ball;
     int screenWidth;
     int screenHeight;
 public:
