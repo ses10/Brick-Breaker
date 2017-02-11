@@ -31,6 +31,12 @@ public:
         @param graphics, the Graphics object that will draw frame
     */
     void draw(Graphics* graphics);
+
+    /**
+        Checks whether the user has opted to start
+        the game by pressing "space"
+    */
+    void update();
 };
 
 #endif

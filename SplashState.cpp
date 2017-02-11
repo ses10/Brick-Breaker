@@ -17,3 +17,11 @@ void SplashState::draw(Graphics* graphics)
 {
     backgroundImage.draw(0,0,graphics);
 }
+
+void SplashState::update()
+{
+    if(input->keyHit(SDLK_SPACE))
+    {
+        getManager()->popState();
+    }
+}
