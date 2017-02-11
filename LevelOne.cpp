@@ -15,6 +15,8 @@ bool LevelOne::init(Input* in, StateManager* m, Game* g)
 
     player.setX(screenWidth/2 - playerSprite.getWidth()/2);
     player.setY(550);
+    player.setHeight(playerSprite.getHeight());
+    player.setWidth(playerSprite.getWidth());
 
     return true;
 }
