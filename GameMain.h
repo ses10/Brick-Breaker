@@ -30,6 +30,11 @@ public:
         @param graphics, the Graphics object that will draw frame
     */
     void draw(Graphics* graphics);
+
+    /**
+        Updates the current state
+    */
+    void update();
 };
 
 #endif // GAMEMAIN_H

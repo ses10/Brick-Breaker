@@ -21,3 +21,14 @@ void GameMain::draw(Graphics* graphics)
 {
     manager.draw(graphics);
 }
+
+void GameMain::update()
+{
+    if(manager.isEmpty())
+    {
+        end();
+        return;
+    }
+
+    manager.update();
+}
