@@ -2,7 +2,7 @@
 
 bool GameMain::init()
 {
-    if(!initSystem("Breakout", 800, 600, false))
+    if(!initSystem("Breakout", SCREEN_WIDTH, SCREEN_HEIGHT, false))
         return false;
 
     if(!splashState.init(getInput(), &manager))
