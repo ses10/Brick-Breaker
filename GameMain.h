@@ -4,6 +4,7 @@
 #include "Game.h"
 #include "StateManager.h"
 #include "SplashState.h"
+#include "LevelOne.h"
 
 /**
     The main Game object that will handle all components of
@@ -14,6 +15,7 @@ class GameMain : public Game
 private:
     StateManager manager;
     SplashState splashState;
+    LevelOne levelOne;
 public:
     /**
         Start the game engine
