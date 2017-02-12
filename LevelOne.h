@@ -3,6 +3,7 @@
 
 #include "Game.h"
 #include "GameState.h"
+#include "SplashState.h"
 #include "Graphics.h"
 #include "Image.h"
 #include "Input.h"
@@ -14,6 +15,7 @@ class LevelOne : public GameState
 {
 private:
     Input* input;
+    Game* game;
     Image backgroundImage;
     Image playerSprite;
     Image ballSprite;
@@ -22,6 +24,9 @@ private:
     int screenWidth;
     int screenHeight;
 public:
+    LevelOne();
+    LevelOne(Input* in, StateManager* m, Game* g);
+
     /**
         Sets up the input and StateManager for instance of a SplashState
         and loads any assets for this state

@@ -1,11 +1,23 @@
 #include "LevelOne.h"
 
+LevelOne::LevelOne()
+{
+
+}
+
+LevelOne::LevelOne(Input* in, StateManager* m, Game* g)
+{
+    init(in, m, g);
+}
+
 bool LevelOne::init(Input* in, StateManager* m, Game* g)
 {
     input = in;
     setManager(m);
-    screenWidth = g->getGraphics()->getWidth();
-    screenHeight = g->getGraphics()->getHeight();
+    game = g;
+
+    screenWidth = game->getGraphics()->getWidth();
+    screenHeight = game->getGraphics()->getHeight();
 
     if(!backgroundImage.load("graphics/levelBackground.bmp"))
         return false;
@@ -47,6 +59,12 @@ void LevelOne::update()
 {
     updatePlayer();
     updateBall();
+
+    if(player.getLives() <= 0)
+    {
+        getManager()->popState();
+        getManager()->addState(new SplashState(input, getManager(),game));
+    }
 }
 
 void LevelOne::updatePlayer()
