@@ -41,7 +41,21 @@ public:
     */
     void draw(Graphics* graphics);
 
+    /**
+        Update the frame for current State
+    */
     void update();
+
+    /**
+        Checks whether the ball has collided with the Player paddle
+
+        @param ball, pointer to the Ball object in game
+        @param player, pointer to the Player object in game
+
+        @return true if collision occurred, false otherwise
+        Ball* ball, Player* player
+    */
+    bool playerBallCollision();
 };
 
 #endif // LEVELONE_H
