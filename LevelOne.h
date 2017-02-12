@@ -53,9 +53,13 @@ public:
         @param player, pointer to the Player object in game
 
         @return true if collision occurred, false otherwise
-        Ball* ball, Player* player
     */
     bool playerBallCollision();
+
+    /**
+        Updates the Player object for current frame
+    */
+    void updatePlayer();
 };
 
 #endif // LEVELONE_H

@@ -45,19 +45,7 @@ void LevelOne::draw(Graphics* graphics)
 
 void LevelOne::update()
 {
-    //handle player movement
-    if(input->keyDown(SDLK_RIGHT))
-        player.setX(player.getX() + player.getXVelocity());
-    if(input->keyDown(SDLK_LEFT))
-        player.setX(player.getX() - player.getXVelocity());
-    if(input->keyHit(SDLK_SPACE))
-        ball.setLocked(false);
-
-    //check if player is out of bounds
-    if(player.getX() < 0)
-        player.setX(0);
-    if(player.getX() + player.getWidth() >= screenWidth )
-        player.setX(screenWidth-player.getWidth());
+    updatePlayer();
 
     //update ball movement
     if(ball.locked())
@@ -113,6 +101,23 @@ void LevelOne::update()
         }
     }
 
+}
+
+void LevelOne::updatePlayer()
+{
+    //handle player movement
+    if(input->keyDown(SDLK_RIGHT))
+        player.setX(player.getX() + player.getXVelocity());
+    if(input->keyDown(SDLK_LEFT))
+        player.setX(player.getX() - player.getXVelocity());
+    if(input->keyHit(SDLK_SPACE))
+        ball.setLocked(false);
+
+    //check if player is out of bounds
+    if(player.getX() < 0)
+        player.setX(0);
+    if(player.getX() + player.getWidth() >= screenWidth )
+        player.setX(screenWidth-player.getWidth());
 }
 
 bool LevelOne::playerBallCollision()
