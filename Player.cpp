@@ -42,6 +42,11 @@ void Player::setYVelocity(int y)
     yVelocity = y;
 }
 
+void Player::setLives(int n)
+{
+    lives = n;
+}
+
 int Player::getWidth()
 {
     return rect.w;
@@ -71,3 +76,7 @@ int Player::getYVelocity()
     return yVelocity;
 }
 
+int Player::getLives()
+{
+    return lives;
+}
