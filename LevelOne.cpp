@@ -22,6 +22,7 @@ bool LevelOne::init(Input* in, StateManager* m, Game* g)
     player.setHeight(playerSprite.getHeight());
     player.setWidth(playerSprite.getWidth());
     player.setXVelocity(7);
+    player.setLives(3);
 
     //set up ball
     ball.setX(player.getX() + player.getWidth()/2);
@@ -102,6 +103,13 @@ void LevelOne::update()
         {
             ball.setX(0);
             ball.setXVelocity(ball.getXVelocity()*-1);
+        }
+
+        //check if player lost ball
+        if(ball.getY() > screenHeight)
+        {
+            ball.setLocked(true);
+            player.setLives(player.getLives() - 1);
         }
     }
 
