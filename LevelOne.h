@@ -57,9 +57,14 @@ public:
     bool playerBallCollision();
 
     /**
-        Updates the Player object for current frame
+        Updates the Player object's position for current frame
     */
     void updatePlayer();
+
+    /**
+        Updates the Ball object's position for current frame
+    */
+    void updateBall();
 };
 
 #endif // LEVELONE_H
