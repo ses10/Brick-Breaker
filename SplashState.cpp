@@ -1,5 +1,15 @@
 #include "SplashState.h"
 
+SplashState::SplashState()
+{
+
+}
+
+SplashState::SplashState(Input* in, StateManager* m)
+{
+    init(in, m);
+}
+
 bool SplashState::init(Input* in, StateManager* m)
 {
     //Set this object's Input and StateManger to point to the ones given

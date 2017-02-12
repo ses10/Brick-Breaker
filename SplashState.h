@@ -14,6 +14,8 @@ private:
     Image backgroundImage;
 
 public:
+    SplashState();
+    SplashState(Input* in, StateManager* m);
     /**
         Sets up the input and StateManager for instance of a SplashState
         and loads any assets for this state
