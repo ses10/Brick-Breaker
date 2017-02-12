@@ -5,14 +5,7 @@ bool GameMain::init()
     if(!initSystem("Breakout", SCREEN_WIDTH, SCREEN_HEIGHT, false))
         return false;
 
-    if(!splashState.init(getInput(), &manager))
-        return false;
-
-    if(!levelOne.init(getInput(), &manager, this))
-        return false;
-
-    manager.addState(&levelOne);
-    manager.addState(&splashState);
+    manager.addState(new SplashState(getInput(), &manager, this));
 
     return true;
 }

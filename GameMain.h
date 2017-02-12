@@ -4,7 +4,6 @@
 #include "Game.h"
 #include "StateManager.h"
 #include "SplashState.h"
-#include "LevelOne.h"
 
 /**
     The main Game object that will handle all components of
@@ -16,8 +15,6 @@ private:
     const static int SCREEN_WIDTH = 800;
     const static int SCREEN_HEIGHT = 600;
     StateManager manager;
-    SplashState splashState;
-    LevelOne levelOne;
 public:
     /**
         Start the game engine
