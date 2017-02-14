@@ -19,6 +19,7 @@ private:
     Image backgroundImage;
     Image playerSprite;
     Image ballSprite;
+    Image blockSprite;
     Player player;
     Ball ball;
     int screenWidth;

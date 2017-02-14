@@ -28,6 +28,9 @@ bool LevelOne::init(Input* in, StateManager* m, Game* g)
     if(!ballSprite.load("graphics/ball.png"))
         return false;
 
+    if(!blockSprite.load("graphics/block.bmp"))
+        return false;
+
     //set up player
     player.setX(screenWidth/2 - playerSprite.getWidth()/2);
     player.setY(550);
