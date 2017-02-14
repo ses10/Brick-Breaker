@@ -60,12 +60,12 @@ public:
     /**
         Checks whether the ball has collided with the Player paddle
 
-        @param ball, pointer to the Ball object in game
-        @param player, pointer to the Player object in game
+        @param obj1, pointer to an Entity object in game
+        @param obj2, pointer to an Entity object in game
 
         @return true if collision occurred, false otherwise
     */
-    bool playerBallCollision();
+    bool collision(Entity* obj1, Entity* obj2);
 
     /**
         Updates the Player object's position for current frame

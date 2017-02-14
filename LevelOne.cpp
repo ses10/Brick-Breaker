@@ -104,7 +104,7 @@ void LevelOne::updateBall()
         ball.setX(ball.getX()+ball.getXVelocity());
 
         //check if ball hit player on x-axis
-        if(playerBallCollision())
+        if(collision(&ball, &player))
         {
             ball.setX(ball.getX()-ball.getXVelocity());
             ball.setXVelocity(ball.getXVelocity()*-1);
@@ -113,7 +113,7 @@ void LevelOne::updateBall()
         ball.setY(ball.getY()+ball.getYVelocity());
 
         //check if ball hit player on y-axis
-        if(playerBallCollision())
+        if(collision(&ball, &player))
         {
             ball.setY(ball.getY()-ball.getYVelocity());
             ball.setYVelocity(ball.getYVelocity()*-1);
@@ -148,22 +148,22 @@ void LevelOne::updateBall()
     }
 }
 
-bool LevelOne::playerBallCollision()
+bool LevelOne::collision(Entity* obj1, Entity* obj2)
 {
     //check right
-    if(ball.getX() >= player.getX() + player.getWidth())
+    if(obj1->getX() >= obj2->getX() + obj2->getWidth())
         return false;
 
     //check bottom
-    if(ball.getY() >= player.getY() + player.getHeight())
+    if(obj1->getY() >= obj2->getY() + obj2->getHeight())
         return false;
 
     //check left
-    if(player.getX() >= ball.getX() + ball.getWidth())
+    if(obj2->getX() >= obj1->getX() + obj1->getWidth())
         return false;
 
     //check top
-    if(player.getY() >= ball.getY() + ball.getHeight())
+    if(obj2->getY() >= obj1->getY() + obj1->getHeight())
         return false;
 
     return true;
