@@ -48,6 +48,9 @@ bool LevelOne::init(Input* in, StateManager* m, Game* g)
     ball.setYVelocity(-5);
     ball.setLocked(true);
 
+    //set up the blocks
+    setBlocks();
+
     return true;
 }
 
@@ -56,6 +59,7 @@ void LevelOne::draw(Graphics* graphics)
     backgroundImage.draw(0,0,graphics);
     playerSprite.draw(player.getX(), player.getY(), graphics);
     ballSprite.draw(ball.getX(), ball.getY(), graphics);
+    drawBlocks(graphics);
 }
 
 void LevelOne::update()
@@ -163,4 +167,34 @@ bool LevelOne::playerBallCollision()
         return false;
 
     return true;
+}
+
+void LevelOne::setBlocks()
+{
+    int i = 0;
+    int blockWidth = blockSprite.getWidth();
+    int blockHeight = blockSprite.getHeight();
+
+    for(int x = 0; x < BLOCK_COL; x++)
+    {
+        for(int y = 0; y < BLOCK_ROW; y++)
+        {
+            blocks[i].setAlive(true);
+            blocks[i].setX(x*blockWidth);
+            blocks[i].setY(y*blockHeight + 100);
+            blocks[i].setWidth(blockWidth);
+            blocks[i].setHeight(blockHeight);
+            i++;
+        }
+    }
+}
+
+void LevelOne::drawBlocks(Graphics* graphics)
+{
+    int numBlocks = BLOCK_COL * BLOCK_ROW;
+    for(int i = 0; i < numBlocks; i++)
+    {
+        if(blocks[i].isAlive())
+            blockSprite.draw(blocks[i].getX(), blocks[i].getY(), graphics);
+    }
 }

@@ -10,6 +10,10 @@
 #include "Sound.h"
 #include "Player.h"
 #include "Ball.h"
+#include "Block.h"
+
+const int BLOCK_COL = 16;
+const int BLOCK_ROW = 5;
 
 class LevelOne : public GameState
 {
@@ -24,6 +28,7 @@ private:
     Ball ball;
     int screenWidth;
     int screenHeight;
+    Block blocks[BLOCK_COL * BLOCK_ROW];
 public:
     LevelOne();
     LevelOne(Input* in, StateManager* m, Game* g);
@@ -71,6 +76,9 @@ public:
         Updates the Ball object's position for current frame
     */
     void updateBall();
+
+    void setBlocks();
+    void drawBlocks(Graphics* graphics);
 };
 
 #endif // LEVELONE_H
