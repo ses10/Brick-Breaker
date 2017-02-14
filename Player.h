@@ -2,28 +2,20 @@
 #define PLAYER_H
 
 #include <SDL/SDL.h>
+#include "Entity.h"
 
-class Player
+class Player : public Entity
 {
 private:
-    SDL_Rect rect;
     int lives;
     int xVelocity;
     int yVelocity;
 public:
     Player();
-    void subtractLives(int n);
-    int getX();
-    int getY();
-    int getWidth();
-    int getHeight();
+    void subtractLives(int n);;
     int getXVelocity();
     int getYVelocity();
     int getLives();
-    void setX(int x);
-    void setY(int y);
-    void setWidth(int width);
-    void setHeight(int height);
     void setXVelocity(int x);
     void setYVelocity(int x);
     void setLives(int n);
