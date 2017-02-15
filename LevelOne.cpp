@@ -109,6 +109,20 @@ void LevelOne::updateBall()
             ball.setX(ball.getX()-ball.getXVelocity());
             ball.setXVelocity(ball.getXVelocity()*-1);
         }
+        //check if ball hit any block on x-axis
+        else
+        {
+            int numBlocks = BLOCK_COL * BLOCK_ROW;
+            for(int i = 0; i < numBlocks; i++)
+            {
+                if(blocks[i].isAlive() && collision(&ball, &blocks[i]))
+                {
+                    ball.setX(ball.getX()-ball.getXVelocity());
+                    ball.setXVelocity(ball.getXVelocity()*-1);
+                    blocks[i].setAlive(false);
+                }
+            }
+        }
 
         ball.setY(ball.getY()+ball.getYVelocity());
 
@@ -118,7 +132,20 @@ void LevelOne::updateBall()
             ball.setY(ball.getY()-ball.getYVelocity());
             ball.setYVelocity(ball.getYVelocity()*-1);
         }
-
+        //check if ball hit any block on y-axis
+        else
+        {
+            int numBlocks = BLOCK_COL * BLOCK_ROW;
+            for(int i = 0; i < numBlocks; i++)
+            {
+                if(blocks[i].isAlive() && collision(&ball, &blocks[i]))
+                {
+                    ball.setY(ball.getY()-ball.getYVelocity());
+                    ball.setYVelocity(ball.getYVelocity()*-1);
+                    blocks[i].setAlive(false);
+                }
+            }
+        }
         //check if ball hits boundaries
         //check top
         if(ball.getY() < 0)
