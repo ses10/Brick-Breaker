@@ -24,6 +24,7 @@ private:
     Image playerSprite;
     Image ballSprite;
     Image blockSprite;
+    Image playerLifeSprite;
     Player player;
     Ball ball;
     int screenWidth;
@@ -79,6 +80,13 @@ public:
 
     void setBlocks();
     void drawBlocks(Graphics* graphics);
+
+    /**
+        Draws the number of lives the player has at the moment of being called
+
+        @param graphics, pointer to the Graphics object that will do the drawing
+    */
+    void drawHUD(Graphics* graphics);
 };
 
 #endif // LEVELONE_H

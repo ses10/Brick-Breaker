@@ -31,6 +31,9 @@ bool LevelOne::init(Input* in, StateManager* m, Game* g)
     if(!blockSprite.load("graphics/block.bmp"))
         return false;
 
+    if(!playerLifeSprite.load("graphics/playerLife.png"))
+        return false;
+
     //set up player
     player.setX(screenWidth/2 - playerSprite.getWidth()/2);
     player.setY(550);
@@ -57,6 +60,7 @@ bool LevelOne::init(Input* in, StateManager* m, Game* g)
 void LevelOne::draw(Graphics* graphics)
 {
     backgroundImage.draw(0,0,graphics);
+    drawHUD(graphics);
     playerSprite.draw(player.getX(), player.getY(), graphics);
     ballSprite.draw(ball.getX(), ball.getY(), graphics);
     drawBlocks(graphics);
@@ -223,5 +227,13 @@ void LevelOne::drawBlocks(Graphics* graphics)
     {
         if(blocks[i].isAlive())
             blockSprite.draw(blocks[i].getX(), blocks[i].getY(), graphics);
+    }
+}
+
+void LevelOne::drawHUD(Graphics* graphics)
+{
+    for(int i=0; i < player.getLives(); i++)
+    {
+        playerLifeSprite.draw(i*playerLifeSprite.getWidth() + 10 + (i*5), 10, graphics);
     }
 }
