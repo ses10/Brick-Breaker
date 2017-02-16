@@ -3,6 +3,7 @@
 
 #include "Game.h"
 #include "GameState.h"
+#include "GameoverState.h"
 #include "SplashState.h"
 #include "Graphics.h"
 #include "Image.h"

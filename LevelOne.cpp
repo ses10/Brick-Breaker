@@ -74,7 +74,7 @@ void LevelOne::update()
     if(player.getLives() <= 0)
     {
         getManager()->popState();
-        getManager()->addState(new SplashState(input, getManager(),game));
+        getManager()->addState(new GameOverState(input, getManager(), game));
     }
 }
 
